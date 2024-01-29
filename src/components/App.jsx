@@ -25,9 +25,13 @@ function App() {
     });
   }
 
-  const filterUser = contacts.filter(contact => {
-    contact.name.toLowerCase().includes(inputValue.toLowerCase());
-  });
+  function filterUsers() {
+    return contacts.filter(contact => {
+      const inputValueLowerCase = inputValue.toLowerCase();
+      const nameLowerCase = contact.name.toLowerCase();
+      return nameLowerCase.includes(inputValueLowerCase);
+    });
+  }
 
   return (
     <>
@@ -35,8 +39,8 @@ function App() {
 
       <ContactForm contacts={contacts} addContact={addUser} />
 
-      <SearchBox onInput={filterUser} inputValue={inputValue} setInputValue={setInputValue} />
-      <ContactList contacts={contacts} onDelete={deleteUser} />
+      <SearchBox filter={filterUsers} inputValue={inputValue} setInputValue={setInputValue} />
+      <ContactList contacts={filterUsers()} onDelete={deleteUser} />
     </>
   );
 }
