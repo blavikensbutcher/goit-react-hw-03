@@ -6,10 +6,10 @@ export const Contact = ({ name, phone, id, onDelete }) => {
   return (
     <li className={styles.container} data-id={id}>
       <div>
-        <p>
+        <p className={styles.text}>
           <MdPeopleAlt size={15} /> {name}
         </p>
-        <p>
+        <p className={styles.text}>
           <FaPhoneAlt size={15} /> {phone}
         </p>
       </div>
