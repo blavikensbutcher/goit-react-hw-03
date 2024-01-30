@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useId } from 'react';
 
-export const ContactForm = ({ addContact, contacts }) => {
+export const ContactForm = ({ addContact }) => {
   const userSchema = Yup.object().shape({
     name: Yup.string().min(3, '3 symbols min').max(50, 'Too long').required('Must be not empty'),
     number: Yup.string()
@@ -38,7 +38,7 @@ export const ContactForm = ({ addContact, contacts }) => {
         <Field type="text" name="number" id={numberID} className={styles.field}></Field>
         <ErrorMessage name="number" component="span" className={styles.error} />
         <button type="submit" className={styles.btn}>
-          Add User
+          Add contact
         </button>
       </Form>
     </Formik>

@@ -37,7 +37,6 @@ function App() {
       <h1 className="container">Phonebook</h1>
 
       <ContactForm contacts={contacts} addContact={addUser} />
-
       <SearchBox filter={filterUsers} inputValue={inputValue} setInputValue={setInputValue} />
       <ContactList contacts={filterUsers()} onDelete={deleteUser} />
     </>
