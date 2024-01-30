@@ -22,5 +22,7 @@
     color: ghostwhite;
 }
 
-
-
+.btn {
+        font-size: 9px;
+        cursor: pointer;
+}
